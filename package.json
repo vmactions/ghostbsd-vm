@@ -1,0 +1,27 @@
+{
+  "name": "vmactions-GhostBSD",
+  "version": "",
+  "description": "GitHub actions for GhostBSD",
+  "type": "module",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vmactions/ghostbsd-vm.git"
+  },
+  "keywords": [
+    "GitHub",
+    "Actions",
+    "GhostBSD"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vmactions/ghostbsd-vm/issues"
+  },
+  "homepage": "https://github.com/vmactions/ghostbsd-vm",
+  "dependencies": {
+    "@actions/core": "^3.0.0",
+    "@actions/exec": "^3.0.0",
+    "@actions/cache": "^6.0.0"
+  }
+}
