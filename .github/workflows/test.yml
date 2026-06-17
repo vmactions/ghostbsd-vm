@@ -98,7 +98,7 @@ jobs:
     - name: Test in GhostBSD
       if: ${{ steps.check.outputs.run == 'true' }}
       id: test
-      uses: vmactions/ghostbsd-vm@56eb06f6a86951498796c0f4de1609dd4bb196ab
+      uses: vmactions/ghostbsd-vm@18aadc99bd5b46a949cf99ee7de4ed52373e2612
       with:
         envs: 'DEBUG MYTOKEN MYTOKEN2'
         prepare: |
@@ -224,7 +224,7 @@ jobs:
     - name: Test in GhostBSD
       if: ${{ steps.check.outputs.run == 'true' }}
       id: test
-      uses: vmactions/ghostbsd-vm@56eb06f6a86951498796c0f4de1609dd4bb196ab
+      uses: vmactions/ghostbsd-vm@18aadc99bd5b46a949cf99ee7de4ed52373e2612
       with:
         envs: 'DEBUG MYTOKEN MYTOKEN2'
         prepare: |
@@ -351,7 +351,7 @@ jobs:
     - name: Test in GhostBSD
       if: ${{ steps.check.outputs.run == 'true' }}
       id: test
-      uses: vmactions/ghostbsd-vm@56eb06f6a86951498796c0f4de1609dd4bb196ab
+      uses: vmactions/ghostbsd-vm@18aadc99bd5b46a949cf99ee7de4ed52373e2612
       with:
         envs: 'DEBUG MYTOKEN MYTOKEN2'
         prepare: |
@@ -472,7 +472,7 @@ jobs:
     - name: Test in GhostBSD
       if: ${{ steps.check.outputs.run == 'true' }}
       id: test
-      uses: vmactions/ghostbsd-vm@56eb06f6a86951498796c0f4de1609dd4bb196ab
+      uses: vmactions/ghostbsd-vm@18aadc99bd5b46a949cf99ee7de4ed52373e2612
       with:
         envs: 'MYTOKEN MYTOKEN2'
         prepare: |
@@ -592,7 +592,7 @@ jobs:
     - name: Test in GhostBSD
       if: ${{ steps.check.outputs.run == 'true' }}
       id: test
-      uses: vmactions/ghostbsd-vm@56eb06f6a86951498796c0f4de1609dd4bb196ab
+      uses: vmactions/ghostbsd-vm@18aadc99bd5b46a949cf99ee7de4ed52373e2612
       with:
         envs: 'MYTOKEN MYTOKEN2'
         prepare: |
@@ -655,7 +655,7 @@ jobs:
     - name: Test in GhostBSD
       id: testerr
       continue-on-error: true 
-      uses: vmactions/ghostbsd-vm@56eb06f6a86951498796c0f4de1609dd4bb196ab
+      uses: vmactions/ghostbsd-vm@18aadc99bd5b46a949cf99ee7de4ed52373e2612
       with:
         usesh: true
         debug: true
@@ -683,7 +683,7 @@ jobs:
     - name: Test in GhostBSD
       id: testpass
       continue-on-error: true 
-      uses: vmactions/ghostbsd-vm@56eb06f6a86951498796c0f4de1609dd4bb196ab
+      uses: vmactions/ghostbsd-vm@18aadc99bd5b46a949cf99ee7de4ed52373e2612
       with:
         usesh: true
         debug: true
