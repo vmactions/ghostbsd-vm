@@ -1,0 +1,48 @@
+          - release: "26.1"
+            arch: aarch64
+          - release: "26.1"
+            arch: riscv64
+          - release: "26.1"
+            arch: powerpc64
+          - release: "26.1"
+            arch: sparc64
+          - release: "26.1"
+            arch: ppc64le
+          - release: "26.1"
+            arch: s390x
+          - release: "26.1-xfce"
+            arch: aarch64
+          - release: "26.1-xfce"
+            arch: riscv64
+          - release: "26.1-xfce"
+            arch: powerpc64
+          - release: "26.1-xfce"
+            arch: sparc64
+          - release: "26.1-xfce"
+            arch: ppc64le
+          - release: "26.1-xfce"
+            arch: s390x
+          - release: "26.1-gershwin"
+            arch: aarch64
+          - release: "26.1-gershwin"
+            arch: riscv64
+          - release: "26.1-gershwin"
+            arch: powerpc64
+          - release: "26.1-gershwin"
+            arch: sparc64
+          - release: "26.1-gershwin"
+            arch: ppc64le
+          - release: "26.1-gershwin"
+            arch: s390x
+          - release: ""
+            arch: aarch64
+          - release: ""
+            arch: riscv64
+          - release: ""
+            arch: powerpc64
+          - release: ""
+            arch: sparc64
+          - release: ""
+            arch: ppc64le
+          - release: ""
+            arch: s390x

@@ -46,6 +46,54 @@ jobs:
           - runs: "ubuntu-24.04-arm"
             arch: "s390x"
           # Manual matrix excludes only; combos with no conf are auto-excluded.
+          - release: "26.1"
+            arch: aarch64
+          - release: "26.1"
+            arch: riscv64
+          - release: "26.1"
+            arch: powerpc64
+          - release: "26.1"
+            arch: sparc64
+          - release: "26.1"
+            arch: ppc64le
+          - release: "26.1"
+            arch: s390x
+          - release: "26.1-xfce"
+            arch: aarch64
+          - release: "26.1-xfce"
+            arch: riscv64
+          - release: "26.1-xfce"
+            arch: powerpc64
+          - release: "26.1-xfce"
+            arch: sparc64
+          - release: "26.1-xfce"
+            arch: ppc64le
+          - release: "26.1-xfce"
+            arch: s390x
+          - release: "26.1-gershwin"
+            arch: aarch64
+          - release: "26.1-gershwin"
+            arch: riscv64
+          - release: "26.1-gershwin"
+            arch: powerpc64
+          - release: "26.1-gershwin"
+            arch: sparc64
+          - release: "26.1-gershwin"
+            arch: ppc64le
+          - release: "26.1-gershwin"
+            arch: s390x
+          - release: ""
+            arch: aarch64
+          - release: ""
+            arch: riscv64
+          - release: ""
+            arch: powerpc64
+          - release: ""
+            arch: sparc64
+          - release: ""
+            arch: ppc64le
+          - release: ""
+            arch: s390x
 
 
     runs-on: ${{ matrix.runs }}
@@ -58,7 +106,7 @@ jobs:
     steps:
     - uses: actions/checkout@v6
 #    - name: Creating Web console
-#      if: ${{ contains(fromJSON('')[matrix.arch == '' && 'x86_64' || matrix.arch], 'sshfs') }}
+#      if: ${{ contains(fromJSON('{"x86_64":["rsync","scp","sshfs","nfs"],"aarch64":[],"riscv64":[],"powerpc64":[],"sparc64":[],"ppc64le":[],"s390x":[]}')[matrix.arch == '' && 'x86_64' || matrix.arch], 'sshfs') }}
 #      uses: vmactions/cf-tunnel@v0
 #      id: tunnel
 #      with:
@@ -66,9 +114,9 @@ jobs:
 #        port: 8000
 
     - name: Test in GhostBSD
-      if: ${{ contains(fromJSON('')[matrix.arch == '' && 'x86_64' || matrix.arch], 'sshfs') }}
+      if: ${{ contains(fromJSON('{"x86_64":["rsync","scp","sshfs","nfs"],"aarch64":[],"riscv64":[],"powerpc64":[],"sparc64":[],"ppc64le":[],"s390x":[]}')[matrix.arch == '' && 'x86_64' || matrix.arch], 'sshfs') }}
       id: test
-      uses: vmactions/ghostbsd-vm@b345857f4be5569744f2e67c13cbbb6de51bd26c
+      uses: vmactions/ghostbsd-vm@b16481c30e2c57b75242f670cbe36babef5d0114
       with:
         envs: 'DEBUG MYTOKEN MYTOKEN2'
         prepare: |
@@ -102,7 +150,7 @@ jobs:
           echo "OK"
 
     - name: Test NAT
-      if: ${{ contains(fromJSON('')[matrix.arch == '' && 'x86_64' || matrix.arch], 'sshfs') }}
+      if: ${{ contains(fromJSON('{"x86_64":["rsync","scp","sshfs","nfs"],"aarch64":[],"riscv64":[],"powerpc64":[],"sparc64":[],"ppc64le":[],"s390x":[]}')[matrix.arch == '' && 'x86_64' || matrix.arch], 'sshfs') }}
       env:
         VM_USER: ""
       run: |
@@ -111,7 +159,7 @@ jobs:
         [ "$TEST_ENV" = "abc" ]
         ssh -v -p 20022 ${VM_USER:-root}@localhost  "uname -a;whoami;pwd"
     - name: Test custom shell
-      if: ${{ contains(fromJSON('')[matrix.arch == '' && 'x86_64' || matrix.arch], 'sshfs') }}
+      if: ${{ contains(fromJSON('{"x86_64":["rsync","scp","sshfs","nfs"],"aarch64":[],"riscv64":[],"powerpc64":[],"sparc64":[],"ppc64le":[],"s390x":[]}')[matrix.arch == '' && 'x86_64' || matrix.arch], 'sshfs') }}
       shell: ghostbsd {0}
       run: |
         pwd
@@ -149,6 +197,54 @@ jobs:
           - runs: "ubuntu-24.04-arm"
             arch: "s390x"
           # Manual matrix excludes only; combos with no conf are auto-excluded.
+          - release: "26.1"
+            arch: aarch64
+          - release: "26.1"
+            arch: riscv64
+          - release: "26.1"
+            arch: powerpc64
+          - release: "26.1"
+            arch: sparc64
+          - release: "26.1"
+            arch: ppc64le
+          - release: "26.1"
+            arch: s390x
+          - release: "26.1-xfce"
+            arch: aarch64
+          - release: "26.1-xfce"
+            arch: riscv64
+          - release: "26.1-xfce"
+            arch: powerpc64
+          - release: "26.1-xfce"
+            arch: sparc64
+          - release: "26.1-xfce"
+            arch: ppc64le
+          - release: "26.1-xfce"
+            arch: s390x
+          - release: "26.1-gershwin"
+            arch: aarch64
+          - release: "26.1-gershwin"
+            arch: riscv64
+          - release: "26.1-gershwin"
+            arch: powerpc64
+          - release: "26.1-gershwin"
+            arch: sparc64
+          - release: "26.1-gershwin"
+            arch: ppc64le
+          - release: "26.1-gershwin"
+            arch: s390x
+          - release: ""
+            arch: aarch64
+          - release: ""
+            arch: riscv64
+          - release: ""
+            arch: powerpc64
+          - release: ""
+            arch: sparc64
+          - release: ""
+            arch: ppc64le
+          - release: ""
+            arch: s390x
 
 
     runs-on: ${{ matrix.runs }}
@@ -161,9 +257,9 @@ jobs:
     steps:
     - uses: actions/checkout@v6
     - name: Test in GhostBSD
-      if: ${{ contains(fromJSON('')[matrix.arch == '' && 'x86_64' || matrix.arch], 'nfs') }}
+      if: ${{ contains(fromJSON('{"x86_64":["rsync","scp","sshfs","nfs"],"aarch64":[],"riscv64":[],"powerpc64":[],"sparc64":[],"ppc64le":[],"s390x":[]}')[matrix.arch == '' && 'x86_64' || matrix.arch], 'nfs') }}
       id: test
-      uses: vmactions/ghostbsd-vm@b345857f4be5569744f2e67c13cbbb6de51bd26c
+      uses: vmactions/ghostbsd-vm@b16481c30e2c57b75242f670cbe36babef5d0114
       with:
         envs: 'DEBUG MYTOKEN MYTOKEN2'
         prepare: |
@@ -197,7 +293,7 @@ jobs:
           echo "OK"
 
     - name: Test NAT
-      if: ${{ contains(fromJSON('')[matrix.arch == '' && 'x86_64' || matrix.arch], 'nfs') }}
+      if: ${{ contains(fromJSON('{"x86_64":["rsync","scp","sshfs","nfs"],"aarch64":[],"riscv64":[],"powerpc64":[],"sparc64":[],"ppc64le":[],"s390x":[]}')[matrix.arch == '' && 'x86_64' || matrix.arch], 'nfs') }}
       env:
         VM_USER: ""
       run: |
@@ -209,7 +305,7 @@ jobs:
         [ "$TEST_ENV" = "abc" ]
         ssh -v -p 20022 ${VM_USER:-root}@localhost "uname -a;whoami;pwd"
     - name: Test custom shell
-      if: ${{ contains(fromJSON('')[matrix.arch == '' && 'x86_64' || matrix.arch], 'nfs') }}
+      if: ${{ contains(fromJSON('{"x86_64":["rsync","scp","sshfs","nfs"],"aarch64":[],"riscv64":[],"powerpc64":[],"sparc64":[],"ppc64le":[],"s390x":[]}')[matrix.arch == '' && 'x86_64' || matrix.arch], 'nfs') }}
       shell: ghostbsd {0}
       run: |
         pwd
@@ -245,6 +341,54 @@ jobs:
           - runs: "ubuntu-24.04-arm"
             arch: "s390x"
           # Manual matrix excludes only; combos with no conf are auto-excluded.
+          - release: "26.1"
+            arch: aarch64
+          - release: "26.1"
+            arch: riscv64
+          - release: "26.1"
+            arch: powerpc64
+          - release: "26.1"
+            arch: sparc64
+          - release: "26.1"
+            arch: ppc64le
+          - release: "26.1"
+            arch: s390x
+          - release: "26.1-xfce"
+            arch: aarch64
+          - release: "26.1-xfce"
+            arch: riscv64
+          - release: "26.1-xfce"
+            arch: powerpc64
+          - release: "26.1-xfce"
+            arch: sparc64
+          - release: "26.1-xfce"
+            arch: ppc64le
+          - release: "26.1-xfce"
+            arch: s390x
+          - release: "26.1-gershwin"
+            arch: aarch64
+          - release: "26.1-gershwin"
+            arch: riscv64
+          - release: "26.1-gershwin"
+            arch: powerpc64
+          - release: "26.1-gershwin"
+            arch: sparc64
+          - release: "26.1-gershwin"
+            arch: ppc64le
+          - release: "26.1-gershwin"
+            arch: s390x
+          - release: ""
+            arch: aarch64
+          - release: ""
+            arch: riscv64
+          - release: ""
+            arch: powerpc64
+          - release: ""
+            arch: sparc64
+          - release: ""
+            arch: ppc64le
+          - release: ""
+            arch: s390x
 
 
     runs-on: ${{ matrix.runs }}
@@ -257,16 +401,16 @@ jobs:
     steps:
     - uses: actions/checkout@v6
 #    - name: Creating Web console
-#      if: ${{ contains(fromJSON('')[matrix.arch == '' && 'x86_64' || matrix.arch], 'scp') }}
+#      if: ${{ contains(fromJSON('{"x86_64":["rsync","scp","sshfs","nfs"],"aarch64":[],"riscv64":[],"powerpc64":[],"sparc64":[],"ppc64le":[],"s390x":[]}')[matrix.arch == '' && 'x86_64' || matrix.arch], 'scp') }}
 #      uses: vmactions/cf-tunnel@v0
 #      id: tunnel
 #      with:
 #        protocol: http
 #        port: 8000
     - name: Test in GhostBSD
-      if: ${{ contains(fromJSON('')[matrix.arch == '' && 'x86_64' || matrix.arch], 'scp') }}
+      if: ${{ contains(fromJSON('{"x86_64":["rsync","scp","sshfs","nfs"],"aarch64":[],"riscv64":[],"powerpc64":[],"sparc64":[],"ppc64le":[],"s390x":[]}')[matrix.arch == '' && 'x86_64' || matrix.arch], 'scp') }}
       id: test
-      uses: vmactions/ghostbsd-vm@b345857f4be5569744f2e67c13cbbb6de51bd26c
+      uses: vmactions/ghostbsd-vm@b16481c30e2c57b75242f670cbe36babef5d0114
       with:
         envs: 'DEBUG MYTOKEN MYTOKEN2'
         prepare: |
@@ -302,7 +446,7 @@ jobs:
           echo "OK"
 
     - name: Test files
-      if: ${{ contains(fromJSON('')[matrix.arch == '' && 'x86_64' || matrix.arch], 'scp') }}
+      if: ${{ contains(fromJSON('{"x86_64":["rsync","scp","sshfs","nfs"],"aarch64":[],"riscv64":[],"powerpc64":[],"sparc64":[],"ppc64le":[],"s390x":[]}')[matrix.arch == '' && 'x86_64' || matrix.arch], 'scp') }}
       env:
         VM_USER: ""
       run: |
@@ -341,6 +485,54 @@ jobs:
           - runs: "ubuntu-24.04-arm"
             arch: "s390x"
           # Manual matrix excludes only; combos with no conf are auto-excluded.
+          - release: "26.1"
+            arch: aarch64
+          - release: "26.1"
+            arch: riscv64
+          - release: "26.1"
+            arch: powerpc64
+          - release: "26.1"
+            arch: sparc64
+          - release: "26.1"
+            arch: ppc64le
+          - release: "26.1"
+            arch: s390x
+          - release: "26.1-xfce"
+            arch: aarch64
+          - release: "26.1-xfce"
+            arch: riscv64
+          - release: "26.1-xfce"
+            arch: powerpc64
+          - release: "26.1-xfce"
+            arch: sparc64
+          - release: "26.1-xfce"
+            arch: ppc64le
+          - release: "26.1-xfce"
+            arch: s390x
+          - release: "26.1-gershwin"
+            arch: aarch64
+          - release: "26.1-gershwin"
+            arch: riscv64
+          - release: "26.1-gershwin"
+            arch: powerpc64
+          - release: "26.1-gershwin"
+            arch: sparc64
+          - release: "26.1-gershwin"
+            arch: ppc64le
+          - release: "26.1-gershwin"
+            arch: s390x
+          - release: ""
+            arch: aarch64
+          - release: ""
+            arch: riscv64
+          - release: ""
+            arch: powerpc64
+          - release: ""
+            arch: sparc64
+          - release: ""
+            arch: ppc64le
+          - release: ""
+            arch: s390x
 
 
 
@@ -353,9 +545,9 @@ jobs:
     steps:
     - uses: actions/checkout@v6
     - name: Test in GhostBSD
-      if: ${{ contains(fromJSON('')[matrix.arch == '' && 'x86_64' || matrix.arch], 'rsync') }}
+      if: ${{ contains(fromJSON('{"x86_64":["rsync","scp","sshfs","nfs"],"aarch64":[],"riscv64":[],"powerpc64":[],"sparc64":[],"ppc64le":[],"s390x":[]}')[matrix.arch == '' && 'x86_64' || matrix.arch], 'rsync') }}
       id: test
-      uses: vmactions/ghostbsd-vm@b345857f4be5569744f2e67c13cbbb6de51bd26c
+      uses: vmactions/ghostbsd-vm@b16481c30e2c57b75242f670cbe36babef5d0114
       with:
         envs: 'MYTOKEN MYTOKEN2'
         prepare: |
@@ -382,7 +574,7 @@ jobs:
           uname -a
           echo "OK"
     - name: Test NAT
-      if: ${{ contains(fromJSON('')[matrix.arch == '' && 'x86_64' || matrix.arch], 'rsync') }}
+      if: ${{ contains(fromJSON('{"x86_64":["rsync","scp","sshfs","nfs"],"aarch64":[],"riscv64":[],"powerpc64":[],"sparc64":[],"ppc64le":[],"s390x":[]}')[matrix.arch == '' && 'x86_64' || matrix.arch], 'rsync') }}
       env:
         VM_USER: ""
       run: |
@@ -392,7 +584,7 @@ jobs:
         ssh -v  -p 20022 ${VM_USER:-root}@localhost  "uname -a;whoami;pwd"
 
     - name: Test custom shell
-      if: ${{ contains(fromJSON('')[matrix.arch == '' && 'x86_64' || matrix.arch], 'rsync') }}
+      if: ${{ contains(fromJSON('{"x86_64":["rsync","scp","sshfs","nfs"],"aarch64":[],"riscv64":[],"powerpc64":[],"sparc64":[],"ppc64le":[],"s390x":[]}')[matrix.arch == '' && 'x86_64' || matrix.arch], 'rsync') }}
       shell: ghostbsd {0}
       run: |
         pwd
@@ -431,6 +623,54 @@ jobs:
           - runs: "ubuntu-24.04-arm"
             arch: "s390x"
           # Manual matrix excludes only; combos with no conf are auto-excluded.
+          - release: "26.1"
+            arch: aarch64
+          - release: "26.1"
+            arch: riscv64
+          - release: "26.1"
+            arch: powerpc64
+          - release: "26.1"
+            arch: sparc64
+          - release: "26.1"
+            arch: ppc64le
+          - release: "26.1"
+            arch: s390x
+          - release: "26.1-xfce"
+            arch: aarch64
+          - release: "26.1-xfce"
+            arch: riscv64
+          - release: "26.1-xfce"
+            arch: powerpc64
+          - release: "26.1-xfce"
+            arch: sparc64
+          - release: "26.1-xfce"
+            arch: ppc64le
+          - release: "26.1-xfce"
+            arch: s390x
+          - release: "26.1-gershwin"
+            arch: aarch64
+          - release: "26.1-gershwin"
+            arch: riscv64
+          - release: "26.1-gershwin"
+            arch: powerpc64
+          - release: "26.1-gershwin"
+            arch: sparc64
+          - release: "26.1-gershwin"
+            arch: ppc64le
+          - release: "26.1-gershwin"
+            arch: s390x
+          - release: ""
+            arch: aarch64
+          - release: ""
+            arch: riscv64
+          - release: ""
+            arch: powerpc64
+          - release: ""
+            arch: sparc64
+          - release: ""
+            arch: ppc64le
+          - release: ""
+            arch: s390x
 
 
 
@@ -443,9 +683,9 @@ jobs:
     steps:
     - uses: actions/checkout@v6
     - name: Test in GhostBSD
-      if: ${{ contains(fromJSON('')[matrix.arch == '' && 'x86_64' || matrix.arch], 'rsync') }}
+      if: ${{ contains(fromJSON('{"x86_64":["rsync","scp","sshfs","nfs"],"aarch64":[],"riscv64":[],"powerpc64":[],"sparc64":[],"ppc64le":[],"s390x":[]}')[matrix.arch == '' && 'x86_64' || matrix.arch], 'rsync') }}
       id: test
-      uses: vmactions/ghostbsd-vm@b345857f4be5569744f2e67c13cbbb6de51bd26c
+      uses: vmactions/ghostbsd-vm@b16481c30e2c57b75242f670cbe36babef5d0114
       with:
         envs: 'MYTOKEN MYTOKEN2'
         prepare: |
@@ -472,7 +712,7 @@ jobs:
           uname -a
           echo "OK"
     - name: Test NAT
-      if: ${{ contains(fromJSON('')[matrix.arch == '' && 'x86_64' || matrix.arch], 'rsync') }}
+      if: ${{ contains(fromJSON('{"x86_64":["rsync","scp","sshfs","nfs"],"aarch64":[],"riscv64":[],"powerpc64":[],"sparc64":[],"ppc64le":[],"s390x":[]}')[matrix.arch == '' && 'x86_64' || matrix.arch], 'rsync') }}
       env:
         VM_USER: ""
       run: |
@@ -482,7 +722,7 @@ jobs:
         ssh -v  -p 20022 ${VM_USER:-root}@localhost  "uname -a;whoami;pwd"
 
     - name: Test custom shell
-      if: ${{ contains(fromJSON('')[matrix.arch == '' && 'x86_64' || matrix.arch], 'rsync') }}
+      if: ${{ contains(fromJSON('{"x86_64":["rsync","scp","sshfs","nfs"],"aarch64":[],"riscv64":[],"powerpc64":[],"sparc64":[],"ppc64le":[],"s390x":[]}')[matrix.arch == '' && 'x86_64' || matrix.arch], 'rsync') }}
       shell: vmsh {0}
       run: |
         pwd
@@ -508,7 +748,7 @@ jobs:
     - name: Test in GhostBSD
       id: testerr
       continue-on-error: true
-      uses: vmactions/ghostbsd-vm@b345857f4be5569744f2e67c13cbbb6de51bd26c
+      uses: vmactions/ghostbsd-vm@b16481c30e2c57b75242f670cbe36babef5d0114
       with:
         usesh: true
         debug: true
@@ -536,7 +776,7 @@ jobs:
     - name: Test in GhostBSD
       id: testpass
       continue-on-error: true
-      uses: vmactions/ghostbsd-vm@b345857f4be5569744f2e67c13cbbb6de51bd26c
+      uses: vmactions/ghostbsd-vm@b16481c30e2c57b75242f670cbe36babef5d0114
       with:
         usesh: true
         debug: true
