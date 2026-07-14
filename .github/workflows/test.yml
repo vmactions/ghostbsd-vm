@@ -116,7 +116,7 @@ jobs:
     - name: Test in GhostBSD
       if: ${{ contains(fromJSON('{"x86_64":["rsync","scp","sshfs","nfs"],"aarch64":[],"riscv64":[],"powerpc64":[],"sparc64":[],"ppc64le":[],"s390x":[]}')[matrix.arch == '' && 'x86_64' || matrix.arch], 'sshfs') }}
       id: test
-      uses: vmactions/ghostbsd-vm@7cab3231afde160f02627e35e25c659c18bfbdd7
+      uses: vmactions/ghostbsd-vm@32bf153ac0a46a1a67f840d2e5550eb7a6db46d2
       with:
         envs: 'DEBUG MYTOKEN MYTOKEN2'
         prepare: |
@@ -280,7 +280,7 @@ jobs:
     - name: Test in GhostBSD
       if: ${{ contains(fromJSON('{"x86_64":["rsync","scp","sshfs","nfs"],"aarch64":[],"riscv64":[],"powerpc64":[],"sparc64":[],"ppc64le":[],"s390x":[]}')[matrix.arch == '' && 'x86_64' || matrix.arch], 'nfs') }}
       id: test
-      uses: vmactions/ghostbsd-vm@7cab3231afde160f02627e35e25c659c18bfbdd7
+      uses: vmactions/ghostbsd-vm@32bf153ac0a46a1a67f840d2e5550eb7a6db46d2
       with:
         envs: 'DEBUG MYTOKEN MYTOKEN2'
         prepare: |
@@ -452,7 +452,7 @@ jobs:
     - name: Test in GhostBSD
       if: ${{ contains(fromJSON('{"x86_64":["rsync","scp","sshfs","nfs"],"aarch64":[],"riscv64":[],"powerpc64":[],"sparc64":[],"ppc64le":[],"s390x":[]}')[matrix.arch == '' && 'x86_64' || matrix.arch], 'scp') }}
       id: test
-      uses: vmactions/ghostbsd-vm@7cab3231afde160f02627e35e25c659c18bfbdd7
+      uses: vmactions/ghostbsd-vm@32bf153ac0a46a1a67f840d2e5550eb7a6db46d2
       with:
         envs: 'DEBUG MYTOKEN MYTOKEN2'
         prepare: |
@@ -629,7 +629,7 @@ jobs:
     - name: Test in GhostBSD
       if: ${{ contains(fromJSON('{"x86_64":["rsync","scp","sshfs","nfs"],"aarch64":[],"riscv64":[],"powerpc64":[],"sparc64":[],"ppc64le":[],"s390x":[]}')[matrix.arch == '' && 'x86_64' || matrix.arch], 'rsync') }}
       id: test
-      uses: vmactions/ghostbsd-vm@7cab3231afde160f02627e35e25c659c18bfbdd7
+      uses: vmactions/ghostbsd-vm@32bf153ac0a46a1a67f840d2e5550eb7a6db46d2
       with:
         envs: 'MYTOKEN MYTOKEN2'
         prepare: |
@@ -788,7 +788,7 @@ jobs:
     - name: Test in GhostBSD
       if: ${{ contains(fromJSON('{"x86_64":["rsync","scp","sshfs","nfs"],"aarch64":[],"riscv64":[],"powerpc64":[],"sparc64":[],"ppc64le":[],"s390x":[]}')[matrix.arch == '' && 'x86_64' || matrix.arch], 'rsync') }}
       id: test
-      uses: vmactions/ghostbsd-vm@7cab3231afde160f02627e35e25c659c18bfbdd7
+      uses: vmactions/ghostbsd-vm@32bf153ac0a46a1a67f840d2e5550eb7a6db46d2
       with:
         envs: 'MYTOKEN MYTOKEN2'
         prepare: |
@@ -892,7 +892,7 @@ jobs:
     - name: Test in GhostBSD
       id: testerr
       continue-on-error: true
-      uses: vmactions/ghostbsd-vm@7cab3231afde160f02627e35e25c659c18bfbdd7
+      uses: vmactions/ghostbsd-vm@32bf153ac0a46a1a67f840d2e5550eb7a6db46d2
       with:
         usesh: true
         debug: true
@@ -920,7 +920,7 @@ jobs:
     - name: Test in GhostBSD
       id: testpass
       continue-on-error: true
-      uses: vmactions/ghostbsd-vm@7cab3231afde160f02627e35e25c659c18bfbdd7
+      uses: vmactions/ghostbsd-vm@32bf153ac0a46a1a67f840d2e5550eb7a6db46d2
       with:
         usesh: true
         debug: true
