@@ -126,7 +126,7 @@ jobs:
     - name: Test in GhostBSD
       if: ${{ contains(fromJSON('{"x86_64":["rsync","scp","sshfs","nfs"],"aarch64":[],"riscv64":[],"powerpc64":[],"sparc64":[],"ppc64le":[],"s390x":[],"i386":[]}')[matrix.arch == '' && 'x86_64' || matrix.arch], 'sshfs') }}
       id: test
-      uses: vmactions/ghostbsd-vm@61480ba38588e2cedfa884a9adbc05a1d853493c
+      uses: vmactions/ghostbsd-vm@52734512bdcc10307fa2f54b5ba9e3e5776c7610
       with:
         envs: 'DEBUG MYTOKEN MYTOKEN2'
         prepare: |
@@ -300,7 +300,7 @@ jobs:
     - name: Test in GhostBSD
       if: ${{ contains(fromJSON('{"x86_64":["rsync","scp","sshfs","nfs"],"aarch64":[],"riscv64":[],"powerpc64":[],"sparc64":[],"ppc64le":[],"s390x":[],"i386":[]}')[matrix.arch == '' && 'x86_64' || matrix.arch], 'nfs') }}
       id: test
-      uses: vmactions/ghostbsd-vm@61480ba38588e2cedfa884a9adbc05a1d853493c
+      uses: vmactions/ghostbsd-vm@52734512bdcc10307fa2f54b5ba9e3e5776c7610
       with:
         envs: 'DEBUG MYTOKEN MYTOKEN2'
         prepare: |
@@ -482,7 +482,7 @@ jobs:
     - name: Test in GhostBSD
       if: ${{ contains(fromJSON('{"x86_64":["rsync","scp","sshfs","nfs"],"aarch64":[],"riscv64":[],"powerpc64":[],"sparc64":[],"ppc64le":[],"s390x":[],"i386":[]}')[matrix.arch == '' && 'x86_64' || matrix.arch], 'scp') }}
       id: test
-      uses: vmactions/ghostbsd-vm@61480ba38588e2cedfa884a9adbc05a1d853493c
+      uses: vmactions/ghostbsd-vm@52734512bdcc10307fa2f54b5ba9e3e5776c7610
       with:
         envs: 'DEBUG MYTOKEN MYTOKEN2'
         prepare: |
@@ -669,7 +669,7 @@ jobs:
     - name: Test in GhostBSD
       if: ${{ contains(fromJSON('{"x86_64":["rsync","scp","sshfs","nfs"],"aarch64":[],"riscv64":[],"powerpc64":[],"sparc64":[],"ppc64le":[],"s390x":[],"i386":[]}')[matrix.arch == '' && 'x86_64' || matrix.arch], 'rsync') }}
       id: test
-      uses: vmactions/ghostbsd-vm@61480ba38588e2cedfa884a9adbc05a1d853493c
+      uses: vmactions/ghostbsd-vm@52734512bdcc10307fa2f54b5ba9e3e5776c7610
       with:
         envs: 'MYTOKEN MYTOKEN2'
         prepare: |
@@ -838,7 +838,7 @@ jobs:
     - name: Test in GhostBSD
       if: ${{ contains(fromJSON('{"x86_64":["rsync","scp","sshfs","nfs"],"aarch64":[],"riscv64":[],"powerpc64":[],"sparc64":[],"ppc64le":[],"s390x":[],"i386":[]}')[matrix.arch == '' && 'x86_64' || matrix.arch], 'rsync') }}
       id: test
-      uses: vmactions/ghostbsd-vm@61480ba38588e2cedfa884a9adbc05a1d853493c
+      uses: vmactions/ghostbsd-vm@52734512bdcc10307fa2f54b5ba9e3e5776c7610
       with:
         envs: 'MYTOKEN MYTOKEN2'
         prepare: |
@@ -958,7 +958,7 @@ jobs:
     - name: Test in GhostBSD
       if: ${{ contains(fromJSON('{"x86_64":["rsync","scp","sshfs","nfs"],"aarch64":[],"riscv64":[],"powerpc64":[],"sparc64":[],"ppc64le":[],"s390x":[],"i386":[]}')['x86_64'], 'rsync') }}
       id: test
-      uses: vmactions/ghostbsd-vm@61480ba38588e2cedfa884a9adbc05a1d853493c
+      uses: vmactions/ghostbsd-vm@52734512bdcc10307fa2f54b5ba9e3e5776c7610
       with:
         mem: 4096
         usesh: true
@@ -1019,7 +1019,7 @@ jobs:
     - name: Test in GhostBSD
       if: ${{ contains(fromJSON('{"x86_64":["rsync","scp","sshfs","nfs"],"aarch64":[],"riscv64":[],"powerpc64":[],"sparc64":[],"ppc64le":[],"s390x":[],"i386":[]}')['x86_64'], 'rsync') }}
       id: test
-      uses: vmactions/ghostbsd-vm@61480ba38588e2cedfa884a9adbc05a1d853493c
+      uses: vmactions/ghostbsd-vm@52734512bdcc10307fa2f54b5ba9e3e5776c7610
       with:
         mem: 4096
         usesh: true
@@ -1081,7 +1081,7 @@ jobs:
     - name: Test in GhostBSD
       id: testerr
       continue-on-error: true
-      uses: vmactions/ghostbsd-vm@61480ba38588e2cedfa884a9adbc05a1d853493c
+      uses: vmactions/ghostbsd-vm@52734512bdcc10307fa2f54b5ba9e3e5776c7610
       with:
         usesh: true
         debug: true
@@ -1109,7 +1109,7 @@ jobs:
     - name: Test in GhostBSD
       id: testpass
       continue-on-error: true
-      uses: vmactions/ghostbsd-vm@61480ba38588e2cedfa884a9adbc05a1d853493c
+      uses: vmactions/ghostbsd-vm@52734512bdcc10307fa2f54b5ba9e3e5776c7610
       with:
         usesh: true
         debug: true
