@@ -14,6 +14,8 @@
             arch: i386
           - release: "26.1"
             arch: loongarch64
+          - release: "26.1"
+            arch: armv7
           - release: "26.1-xfce"
             arch: aarch64
           - release: "26.1-xfce"
@@ -30,6 +32,8 @@
             arch: i386
           - release: "26.1-xfce"
             arch: loongarch64
+          - release: "26.1-xfce"
+            arch: armv7
           - release: "26.1-gershwin"
             arch: aarch64
           - release: "26.1-gershwin"
@@ -46,6 +50,8 @@
             arch: i386
           - release: "26.1-gershwin"
             arch: loongarch64
+          - release: "26.1-gershwin"
+            arch: armv7
           - release: ""
             arch: aarch64
           - release: ""
@@ -62,3 +68,5 @@
             arch: i386
           - release: ""
             arch: loongarch64
+          - release: ""
+            arch: armv7
