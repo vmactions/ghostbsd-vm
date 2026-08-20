@@ -1,6 +1,6 @@
 {
   "name": "vmactions-GhostBSD",
-  "version": "",
+  "version": "1.0.2",
   "description": "GitHub actions for GhostBSD",
   "type": "module",
   "main": "index.js",
