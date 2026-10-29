@@ -40,7 +40,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        release: [ "26.1", "26.1-xfce","26.1-gershwin"
+        release: [ "26.1", "26.1-xfce","26.1-gershwin", "26.2", "26.2-xfce"
  ]
         arch: [ "aarch64", "", "riscv64", "powerpc64", "sparc64", "ppc64le", "s390x", "i386", "loongarch64", "armv7"]
         runs: [ "ubuntu-26.04", "ubuntu-26.04-arm"]
@@ -123,6 +123,42 @@ jobs:
             arch: loongarch64
           - release: "26.1-gershwin"
             arch: armv7
+          - release: "26.2"
+            arch: aarch64
+          - release: "26.2"
+            arch: riscv64
+          - release: "26.2"
+            arch: powerpc64
+          - release: "26.2"
+            arch: sparc64
+          - release: "26.2"
+            arch: ppc64le
+          - release: "26.2"
+            arch: s390x
+          - release: "26.2"
+            arch: i386
+          - release: "26.2"
+            arch: loongarch64
+          - release: "26.2"
+            arch: armv7
+          - release: "26.2-xfce"
+            arch: aarch64
+          - release: "26.2-xfce"
+            arch: riscv64
+          - release: "26.2-xfce"
+            arch: powerpc64
+          - release: "26.2-xfce"
+            arch: sparc64
+          - release: "26.2-xfce"
+            arch: ppc64le
+          - release: "26.2-xfce"
+            arch: s390x
+          - release: "26.2-xfce"
+            arch: i386
+          - release: "26.2-xfce"
+            arch: loongarch64
+          - release: "26.2-xfce"
+            arch: armv7
 
 
     runs-on: ${{ matrix.runs }}
@@ -145,7 +181,7 @@ jobs:
     - name: Test in GhostBSD
       if: ${{ contains(fromJSON('{"x86_64":["rsync","scp","sshfs","nfs","tar"],"aarch64":[],"riscv64":[],"powerpc64":[],"sparc64":[],"ppc64le":[],"s390x":[],"i386":[],"loongarch64":[],"armv7":[]}')[matrix.arch == '' && 'x86_64' || matrix.arch], 'sshfs') }}
       id: test
-      uses: vmactions/ghostbsd-vm@c61773d819f5bd1a8990a8eef6ff068517a543ec
+      uses: vmactions/ghostbsd-vm@eef56684177821aad9769337612bc6d1746fb66e
       with:
         envs: 'DEBUG MYTOKEN MYTOKEN2'
         prepare: |
@@ -230,7 +266,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        release: [ "26.1", "26.1-xfce","26.1-gershwin"
+        release: [ "26.1", "26.1-xfce","26.1-gershwin", "26.2", "26.2-xfce"
  ]
         arch: [ "aarch64", "", "riscv64", "powerpc64", "sparc64", "ppc64le", "s390x", "i386", "loongarch64", "armv7"]
         runs: [ "ubuntu-26.04", "ubuntu-26.04-arm"]
@@ -313,6 +349,42 @@ jobs:
             arch: loongarch64
           - release: "26.1-gershwin"
             arch: armv7
+          - release: "26.2"
+            arch: aarch64
+          - release: "26.2"
+            arch: riscv64
+          - release: "26.2"
+            arch: powerpc64
+          - release: "26.2"
+            arch: sparc64
+          - release: "26.2"
+            arch: ppc64le
+          - release: "26.2"
+            arch: s390x
+          - release: "26.2"
+            arch: i386
+          - release: "26.2"
+            arch: loongarch64
+          - release: "26.2"
+            arch: armv7
+          - release: "26.2-xfce"
+            arch: aarch64
+          - release: "26.2-xfce"
+            arch: riscv64
+          - release: "26.2-xfce"
+            arch: powerpc64
+          - release: "26.2-xfce"
+            arch: sparc64
+          - release: "26.2-xfce"
+            arch: ppc64le
+          - release: "26.2-xfce"
+            arch: s390x
+          - release: "26.2-xfce"
+            arch: i386
+          - release: "26.2-xfce"
+            arch: loongarch64
+          - release: "26.2-xfce"
+            arch: armv7
 
 
     runs-on: ${{ matrix.runs }}
@@ -327,7 +399,7 @@ jobs:
     - name: Test in GhostBSD
       if: ${{ contains(fromJSON('{"x86_64":["rsync","scp","sshfs","nfs","tar"],"aarch64":[],"riscv64":[],"powerpc64":[],"sparc64":[],"ppc64le":[],"s390x":[],"i386":[],"loongarch64":[],"armv7":[]}')[matrix.arch == '' && 'x86_64' || matrix.arch], 'nfs') }}
       id: test
-      uses: vmactions/ghostbsd-vm@c61773d819f5bd1a8990a8eef6ff068517a543ec
+      uses: vmactions/ghostbsd-vm@eef56684177821aad9769337612bc6d1746fb66e
       with:
         envs: 'DEBUG MYTOKEN MYTOKEN2'
         prepare: |
@@ -464,7 +536,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        release: [ "26.1", "26.1-xfce","26.1-gershwin"
+        release: [ "26.1", "26.1-xfce","26.1-gershwin", "26.2", "26.2-xfce"
  ]
         arch: [ "aarch64", "", "riscv64", "powerpc64", "sparc64", "ppc64le", "s390x", "i386", "loongarch64", "armv7"]
         runs: [ "ubuntu-26.04", "ubuntu-26.04-arm"]
@@ -547,6 +619,42 @@ jobs:
             arch: loongarch64
           - release: "26.1-gershwin"
             arch: armv7
+          - release: "26.2"
+            arch: aarch64
+          - release: "26.2"
+            arch: riscv64
+          - release: "26.2"
+            arch: powerpc64
+          - release: "26.2"
+            arch: sparc64
+          - release: "26.2"
+            arch: ppc64le
+          - release: "26.2"
+            arch: s390x
+          - release: "26.2"
+            arch: i386
+          - release: "26.2"
+            arch: loongarch64
+          - release: "26.2"
+            arch: armv7
+          - release: "26.2-xfce"
+            arch: aarch64
+          - release: "26.2-xfce"
+            arch: riscv64
+          - release: "26.2-xfce"
+            arch: powerpc64
+          - release: "26.2-xfce"
+            arch: sparc64
+          - release: "26.2-xfce"
+            arch: ppc64le
+          - release: "26.2-xfce"
+            arch: s390x
+          - release: "26.2-xfce"
+            arch: i386
+          - release: "26.2-xfce"
+            arch: loongarch64
+          - release: "26.2-xfce"
+            arch: armv7
 
 
     runs-on: ${{ matrix.runs }}
@@ -568,7 +676,7 @@ jobs:
     - name: Test in GhostBSD
       if: ${{ contains(fromJSON('{"x86_64":["rsync","scp","sshfs","nfs","tar"],"aarch64":[],"riscv64":[],"powerpc64":[],"sparc64":[],"ppc64le":[],"s390x":[],"i386":[],"loongarch64":[],"armv7":[]}')[matrix.arch == '' && 'x86_64' || matrix.arch], 'scp') }}
       id: test
-      uses: vmactions/ghostbsd-vm@c61773d819f5bd1a8990a8eef6ff068517a543ec
+      uses: vmactions/ghostbsd-vm@eef56684177821aad9769337612bc6d1746fb66e
       with:
         envs: 'DEBUG MYTOKEN MYTOKEN2'
         prepare: |
@@ -698,7 +806,7 @@ jobs:
     - name: Test in GhostBSD
       if: ${{ contains('{"x86_64":["rsync","scp","sshfs","nfs","tar"],"aarch64":[],"riscv64":[],"powerpc64":[],"sparc64":[],"ppc64le":[],"s390x":[],"i386":[],"loongarch64":[],"armv7":[]}', 'tar') }}
       id: test
-      uses: vmactions/ghostbsd-vm@c61773d819f5bd1a8990a8eef6ff068517a543ec
+      uses: vmactions/ghostbsd-vm@eef56684177821aad9769337612bc6d1746fb66e
       with:
         mem: 4096
         debug: true
@@ -765,7 +873,7 @@ jobs:
     - name: Test in GhostBSD
       if: ${{ contains('{"x86_64":["rsync","scp","sshfs","nfs","tar"],"aarch64":[],"riscv64":[],"powerpc64":[],"sparc64":[],"ppc64le":[],"s390x":[],"i386":[],"loongarch64":[],"armv7":[]}', '9p') }}
       id: test
-      uses: vmactions/ghostbsd-vm@c61773d819f5bd1a8990a8eef6ff068517a543ec
+      uses: vmactions/ghostbsd-vm@eef56684177821aad9769337612bc6d1746fb66e
       with:
         mem: 4096
         debug: true
@@ -811,7 +919,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        release: [ "26.1", "26.1-xfce","26.1-gershwin"
+        release: [ "26.1", "26.1-xfce","26.1-gershwin", "26.2", "26.2-xfce"
  ]
         arch: [ "aarch64", "", "riscv64", "powerpc64", "sparc64", "ppc64le", "s390x", "i386", "loongarch64", "armv7"]
         runs: [ "ubuntu-26.04", "ubuntu-26.04-arm"]
@@ -889,6 +997,42 @@ jobs:
             arch: loongarch64
           - release: "26.1-gershwin"
             arch: armv7
+          - release: "26.2"
+            arch: aarch64
+          - release: "26.2"
+            arch: riscv64
+          - release: "26.2"
+            arch: powerpc64
+          - release: "26.2"
+            arch: sparc64
+          - release: "26.2"
+            arch: ppc64le
+          - release: "26.2"
+            arch: s390x
+          - release: "26.2"
+            arch: i386
+          - release: "26.2"
+            arch: loongarch64
+          - release: "26.2"
+            arch: armv7
+          - release: "26.2-xfce"
+            arch: aarch64
+          - release: "26.2-xfce"
+            arch: riscv64
+          - release: "26.2-xfce"
+            arch: powerpc64
+          - release: "26.2-xfce"
+            arch: sparc64
+          - release: "26.2-xfce"
+            arch: ppc64le
+          - release: "26.2-xfce"
+            arch: s390x
+          - release: "26.2-xfce"
+            arch: i386
+          - release: "26.2-xfce"
+            arch: loongarch64
+          - release: "26.2-xfce"
+            arch: armv7
 
 
 
@@ -903,7 +1047,7 @@ jobs:
     - name: Test in GhostBSD
       if: ${{ contains(fromJSON('{"x86_64":["rsync","scp","sshfs","nfs","tar"],"aarch64":[],"riscv64":[],"powerpc64":[],"sparc64":[],"ppc64le":[],"s390x":[],"i386":[],"loongarch64":[],"armv7":[]}')[matrix.arch == '' && 'x86_64' || matrix.arch], 'rsync') }}
       id: test
-      uses: vmactions/ghostbsd-vm@c61773d819f5bd1a8990a8eef6ff068517a543ec
+      uses: vmactions/ghostbsd-vm@eef56684177821aad9769337612bc6d1746fb66e
       with:
         envs: 'MYTOKEN MYTOKEN2'
         prepare: |
@@ -994,7 +1138,7 @@ jobs:
     - name: Test in GhostBSD
       if: ${{ contains(fromJSON('{"x86_64":["rsync","scp","sshfs","nfs","tar"],"aarch64":[],"riscv64":[],"powerpc64":[],"sparc64":[],"ppc64le":[],"s390x":[],"i386":[],"loongarch64":[],"armv7":[]}')['x86_64'], 'rsync') }}
       id: test
-      uses: vmactions/ghostbsd-vm@c61773d819f5bd1a8990a8eef6ff068517a543ec
+      uses: vmactions/ghostbsd-vm@eef56684177821aad9769337612bc6d1746fb66e
       with:
         prepare: |
           pkg install -y socat
@@ -1092,7 +1236,7 @@ jobs:
         sparse-checkout-cone-mode: true
     - name: Test in GhostBSD
       id: test
-      uses: vmactions/ghostbsd-vm@c61773d819f5bd1a8990a8eef6ff068517a543ec
+      uses: vmactions/ghostbsd-vm@eef56684177821aad9769337612bc6d1746fb66e
       with:
         arch: ${{ matrix.arch }}
         debug: true
@@ -1140,7 +1284,7 @@ jobs:
     - name: Test in GhostBSD
       if: ${{ contains(fromJSON('{"x86_64":["rsync","scp","sshfs","nfs","tar"],"aarch64":[],"riscv64":[],"powerpc64":[],"sparc64":[],"ppc64le":[],"s390x":[],"i386":[],"loongarch64":[],"armv7":[]}')['x86_64'], 'rsync') }}
       id: test
-      uses: vmactions/ghostbsd-vm@c61773d819f5bd1a8990a8eef6ff068517a543ec
+      uses: vmactions/ghostbsd-vm@eef56684177821aad9769337612bc6d1746fb66e
       with:
         envs: 'MYTOKEN MYTOKEN2'
         prepare: |
@@ -1257,7 +1401,7 @@ jobs:
     - name: Test in GhostBSD
       if: ${{ contains(fromJSON('{"x86_64":["rsync","scp","sshfs","nfs","tar"],"aarch64":[],"riscv64":[],"powerpc64":[],"sparc64":[],"ppc64le":[],"s390x":[],"i386":[],"loongarch64":[],"armv7":[]}')['x86_64'], 'rsync') }}
       id: test
-      uses: vmactions/ghostbsd-vm@c61773d819f5bd1a8990a8eef6ff068517a543ec
+      uses: vmactions/ghostbsd-vm@eef56684177821aad9769337612bc6d1746fb66e
       with:
         mem: 4096
         debug: true
@@ -1317,7 +1461,7 @@ jobs:
     - name: Test in GhostBSD
       if: ${{ contains(fromJSON('{"x86_64":["rsync","scp","sshfs","nfs","tar"],"aarch64":[],"riscv64":[],"powerpc64":[],"sparc64":[],"ppc64le":[],"s390x":[],"i386":[],"loongarch64":[],"armv7":[]}')['x86_64'], 'rsync') }}
       id: test
-      uses: vmactions/ghostbsd-vm@c61773d819f5bd1a8990a8eef6ff068517a543ec
+      uses: vmactions/ghostbsd-vm@eef56684177821aad9769337612bc6d1746fb66e
       with:
         mem: 4096
         debug: true
@@ -1395,7 +1539,7 @@ jobs:
     - name: Test in GhostBSD
       if: ${{ contains(fromJSON('{"x86_64":["rsync","scp","sshfs","nfs","tar"],"aarch64":[],"riscv64":[],"powerpc64":[],"sparc64":[],"ppc64le":[],"s390x":[],"i386":[],"loongarch64":[],"armv7":[]}')['x86_64'], 'rsync') }}
       id: test
-      uses: vmactions/ghostbsd-vm@c61773d819f5bd1a8990a8eef6ff068517a543ec
+      uses: vmactions/ghostbsd-vm@eef56684177821aad9769337612bc6d1746fb66e
       with:
         mem: 4096
         debug: true
@@ -1454,7 +1598,7 @@ jobs:
     - name: Test in GhostBSD
       if: ${{ contains(fromJSON('{"x86_64":["rsync","scp","sshfs","nfs","tar"],"aarch64":[],"riscv64":[],"powerpc64":[],"sparc64":[],"ppc64le":[],"s390x":[],"i386":[],"loongarch64":[],"armv7":[]}')['x86_64'], 'rsync') }}
       id: test
-      uses: vmactions/ghostbsd-vm@c61773d819f5bd1a8990a8eef6ff068517a543ec
+      uses: vmactions/ghostbsd-vm@eef56684177821aad9769337612bc6d1746fb66e
       with:
         mem: 4096
         debug: true
@@ -1526,7 +1670,7 @@ jobs:
     - name: Test in GhostBSD
       id: testerr
       continue-on-error: true
-      uses: vmactions/ghostbsd-vm@c61773d819f5bd1a8990a8eef6ff068517a543ec
+      uses: vmactions/ghostbsd-vm@eef56684177821aad9769337612bc6d1746fb66e
       with:
         debug: true
         # A command that EXISTS and fails, rather than `false` or a made-up
@@ -1572,7 +1716,7 @@ jobs:
     - name: Test in GhostBSD
       id: testpass
       continue-on-error: true
-      uses: vmactions/ghostbsd-vm@c61773d819f5bd1a8990a8eef6ff068517a543ec
+      uses: vmactions/ghostbsd-vm@eef56684177821aad9769337612bc6d1746fb66e
       with:
         debug: true
         # No `true` and no double quotes: this body runs on every guest, and
